@@ -1,7 +1,8 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;  /*garante que o preenchimento seja incluido no calculo da largura, evitando que o conteúdo ultrapasse a tela. */
+    box-sizing: border-box;
+    /*garante que o preenchimento seja incluido no calculo da largura, evitando que o conteúdo ultrapasse a tela. */
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 
 }
@@ -12,41 +13,48 @@ html {
 }
 
 
-header{
-    padding: min(2vh, 2rem); /*ajustando o padding para ser flexivel*/
-    background-color:#000000 ;
-    width: 100%; /*colocamos a largura para 100% do espaço disponível*/
+header {
+    padding: min(2vh, 2rem);
+    /*ajustando o padding para ser flexivel*/
+    background-color: #000000;
+    width: 100%;
+    /*colocamos a largura para 100% do espaço disponível*/
     display: flex;
     justify-content: space-between;
     align-items: center;
 
     /*aqui começamos o posicionamento do Header*/
-    position: sticky ; /*posicionamento do Header usando o Stick, sendo um posicionamento fixo, porém distinto do fixed.*/
-    top: 0; /*Espaçamento superior zerado, fazendo com que o Header fique grudado ao top.*/
-    left: 0; /*Espaçamento a esquerda zersando, fazendo com que o header fique grudado a esquerda.*/
-    z-index: 999; /*eixo de profundidade (eixo cartesiano). */
-    box-shadow: 0 0.21rem 0.5rem white; /*primeiro valor sombra Bottom (0), segundo valor sombra bottom (0.21rem), terceiro valor gradient da sombra (0.5rem). */ 
+    position: sticky;
+    /*posicionamento do Header usando o Stick, sendo um posicionamento fixo, porém distinto do fixed.*/
+    top: 0;
+    /*Espaçamento superior zerado, fazendo com que o Header fique grudado ao top.*/
+    left: 0;
+    /*Espaçamento a esquerda zersando, fazendo com que o header fique grudado a esquerda.*/
+    z-index: 999;
+    /*eixo de profundidade (eixo cartesiano). */
+    box-shadow: 0 0.21rem 0.5rem white;
+    /*primeiro valor sombra Bottom (0), segundo valor sombra bottom (0.21rem), terceiro valor gradient da sombra (0.5rem). */
 }
 
-header img{
+header img {
     width: 10rem;
-    height:11rem ;
- 
+    height: 11rem;
+
 }
 
-header button{
+header button {
     width: 13rem;
     height: 1.5rem;
-    background-color:#e21013 ;
+    background-color: #e21013;
     border-radius: 1rem;
     padding: 1.3rem;
     color: #ffffff;
     display: flex;
-    align-items: center;  
+    align-items: center;
     justify-content: center;
 }
 
-.sessão-1  {
+.sessão-1 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -55,7 +63,7 @@ header button{
     padding: min(20vh, 6rem);
 }
 
-.sessão-2{
+.sessão-2 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -64,37 +72,140 @@ header button{
     padding: min(20vh, 6rem);
 }
 
-.div-01 p{
+.sessão-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+    width: 100%;
+    padding: min(20vh, 6rem);
+}
+
+.div-01 p {
     font-size: 2rem;
     margin: 1.2em;
     color: #ffffff;
 }
 
-.div-02 img{
+.div-02 img {
     width: 30em;
     margin: 5rem auto;
     border-radius: 3em;
-    display: block; 
+    display: block;
 }
 
-footer{
+.flex-box {    /*elemento pai das caixas (3 div´s )*/
+    display: flex; /*tornando ele flexivel*/
+    justify-content: center; /*justifivando os itens na horizontal*/
+    align-items: center; /*justificando os itens na horizontaal*/
+    gap: 2rem; 
+    margin-bottom: 10rem; /*espaçamento inferior em relação a sessão */
+    z-index: 1; /*prioridade no eixo Z (eixo cartesiano)*/
+    flex-wrap: wrap; 
+    /*usado para quebra se atela for curta*/
+    position: relative;
+    /*usado para ser relativa a tela (adapta ao tamanho da tela do usuário)*/
+
+}
+
+.flex-box div {   /*aqui estamos estilizando nossa caixa onde estão dentro os conteúdos*/
+    width: 200px; /*largura da caixa*/  
+    height: 400px; /*altura da caixa*/ 
+    box-shadow: 20px 20px 50px #e21013; /*sombra e cor da caixa*/
+    border-radius: 15px; /*arredondamento da caixa*/
+    background-color: #000000; /*cor de funfo do elemento*/
+    color: #ffffff; /*cor do texto */
+}
+
+.conteudo-1{  /*caixa de conteúdo */
+    padding: 20px; /* preenchimento interno do conteúdo */
+    text-align: center; /* alinhando o conteúdo ao centro */
+    transform: translateY(50px); /* estabelecimento um raio de 50px de espaço no eixo Y */
+    opacity: 0.2; /*20% de opacidade*/
+    transition: 0.5s; /*aplicando uma transiçao no evento */
+}
+
+.conteudo-1:hover{
+    opacity:1;  /*100% devisibilidade*/
+    transform: translateY(0px); /*aplicando o retorno do conteúdo ao eixo Y em */
+ }
+  
+ .conteudo-2{  /*subtítulo da caixa*/
+    padding: 20px;  /**/
+    text-align: center;
+    transform: translateY(50px);
+    opacity: 0.2; /*20% de opacidade*/
+    transition: 0.5s;
+}
+
+.conteudo-2:hover{
+    opacity:1;  /*100% devisibilidade*/
+    transform: translateY(0px);
+ }
+
+ .conteudo-3{
+    padding: 20px;
+    text-align: center;
+    transform: translateY(50px);
+    opacity: 0.2; /*20% de opacidade*/
+    transition: 0.5s;
+}
+
+.conteudo-3:hover{
+    opacity:1;  /*100% devisibilidade*/
+    transform: translateY(0px);
+ }
+
+ .conteudo h2{ /*subtítulo da caixa */
+    position: absolute; /*posicionamento absoluto em relação ao PAI*/
+    right: 30px; /*jogando ele 30px  */
+    font-size: 5rem;
+    color: grey;
+ }
+
+ .conteudo h3{ /*segundo subtitu*/
+    font-size: 1.8em;
+    color: #ffffff;
+    z-index: 1;
+ }
+
+ .conteudo p{ /*paragrafo da caixa*/ 
+    font-size: 0.8em; /*tamanho da letra*/
+    color: #ffffff; /*cor da letra */
+    font-weight: 300; /*peso da fonte*/
+    margin-top: 4rem; /*espaçamento superior */
+ }
+
+ .conteudo a { /*botaão ancora da caixa*/
+    padding: 8px 20px; /*prenchimento eixo y e x */
+    background: #ffffff; /*cor de fundo*/
+    color: #000000; /*cor da letra*/
+    text-decoration: none; /*removenfo o sublinhado */
+    border-radius: 15px; /*arrendodamento da borda */
+    font-weight: 500; /*peso dafonte */
+    margin-top: 2.7rem; /*espaçameto superior */
+    box-shadow: 0 5px 156 #000000; /*sombra da caixa*/
+    display: inline-block; /*comportamento do botão em linha e sempre em bloco*/
+    position: relative; /*posicionamento relativo*/
+ }
+footer {
     background-color: #000000;
     width: 100%;
     padding: min(10vh, 4rem);
 }
 
-@media(max-width: 888px){
-    header img{
+@media(max-width: 888px) {
+    header img {
         font-size: 5.5em;
         z-index: 999;
     }
 
-    header button{
+    header button {
         width: 10rem;
         height: 0.8rem;
     }
 
-    .sessão-1{
+    .sessão-1 {
         padding: 9rem;
         display: flex;
         flex-direction: column;
@@ -102,7 +213,8 @@ footer{
         align-items: center;
         gap: 15px;
     }
-    .sessão-2{
+
+    .sessão-2 {
         padding: 9rem;
         display: flex;
         flex-direction: column;
@@ -110,7 +222,8 @@ footer{
         align-items: center;
         gap: 15px;
     }
-    .div-01 p{
+
+    .div-01 p {
         font-size: 1.1rem;
         line-height: 1.5;
         text-align: left;
@@ -119,7 +232,7 @@ footer{
         margin: 2em;
     }
 
-    .div-02 img{
+    .div-02 img {
         width: 20rem;
         margin: 0.2rem;
     }
